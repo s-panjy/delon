@@ -1,0 +1,36 @@
+{
+    "properties": {
+        "login_type": {
+            "type": "string",
+            "title": "登录方式",
+            "enum": [
+                { "label": "手机", "value": "mobile" },
+                { "label": "账密", "value": "account" }
+            ],
+            "default": "mobile",
+            "ui": {
+                "widget": "radio",
+                "styleType": "button"
+            }
+        },
+        "mobile": {
+            "type": "string",
+            "ui": {
+                "visibleIf": { "login_type": [ "mobile" ] }
+            }
+        },
+        "name": {
+            "type": "string",
+            "ui": {
+                "visibleIf": { "login_type": [ "account" ] }
+            }
+        },
+        "password": {
+            "type": "string",
+            "ui": {
+                "type": "password"
+            }
+        }
+    },
+    "required": [ "login_type", "mobile", "name", "password" ]
+}
